@@ -1,9 +1,16 @@
 ---
+---
 version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.9.1
-    steps:
-      - checkout
-      - run: echo "hello world"
+      - image: rwlaub/api:latest
+        auth:
+          username: rwlaub
+          password: $DOCKERHUB_PASSWORD
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build:
+            context: org-global
