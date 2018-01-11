@@ -3,10 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rwlaub/api:latest
-        auth:
-          username: rwlaub
-          password: $DOCKERHUB_PASSWORD
+      - image: ubuntu
     steps:
       - checkout
 workflows:
