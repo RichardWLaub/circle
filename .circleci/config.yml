@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ubuntu
+      - image: circleci/golang:1.8
     steps:
       - checkout
 workflows:
